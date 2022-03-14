@@ -10,10 +10,13 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-const { Client } = require('pg')
-const client = new Client()
-client.connect()
-client.query('SELECT $1::text as message', ['Hello world!'], (err, res) => {
-  console.log(err ? err.stack : res.rows[0].message) // Hello World!
-  client.end()
-})
+var pgp = require("pg-promise")(/*options*/);
+var db = pgp("postgres://username:password@host:5432/BaseDD");
+
+db.one("SELECT $1 AS value", 123)
+    .then(function (data) {
+        console.log("DATA:", data.value);
+    })
+    .catch(function (error) {
+        console.log("ERROR:", error);
+    });
