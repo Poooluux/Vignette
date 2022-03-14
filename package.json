@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Poooluux/Vignette/issues"
   },
-  "homepage": "https://github.com/Poooluux/Vignette#readme"
+  "homepage": "https://github.com/Poooluux/Vignette#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
