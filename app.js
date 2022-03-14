@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-    res.sendFile('/index.html')
+    res.sendFile('./index.html')
 })
 
 app.listen(port, () => {
@@ -11,9 +11,9 @@ app.listen(port, () => {
 })
 
 var pgp = require("pg-promise")(/*options*/);
-var db = pgp("postgres://joannlux29@gmail.com:1971 2000@host:5432/BaseDD");
+var db = pgp("postgres://vignette:azerty@localhost:5432/BaseDD"); //FIXME : exterioriser le port parce-que faille sécurité
 
-db.one("SELECT $1 AS value", 123)
+db.one("SELECT $1 AS value", 123) 
     .then(function (data) {
         console.log("DATA:", data.value);
     })
