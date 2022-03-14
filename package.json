@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Poooluux/Vignette#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "pg-promise": "^10.11.1"
   }
 }
